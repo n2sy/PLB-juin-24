@@ -1,1 +1,17 @@
-<p>first works!</p>
+<p>Je m'appelle {{ prenom }} : {{ age }} ans</p>
+
+<div [hidden]="hd" [style.backgroundColor]="myColor">Chez PLB</div>
+<hr />
+<div [hidden]="hd" [style.backgroundColor]="'yellow'">Chez Edouard</div>
+
+<button
+  (mouseenter)="mouseenter()"
+  (click)="clickHandler()"
+  class="btn btn-primary"
+>
+  Click me
+</button>
+
+<input [(ngModel)]="prenom" type="text" class="form-control" />
+
+<app-child [childColor]="myColor"></app-child>
