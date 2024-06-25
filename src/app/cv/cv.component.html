@@ -1,8 +1,11 @@
 <div class="row">
   <div class="col-6">
-    <app-liste></app-liste>
+    <app-liste
+      (listeEvent)="recupererCandidatClicke($event)"
+      [allCands]="tabCandidats"
+    ></app-liste>
   </div>
   <div class="col-6">
-    <app-details></app-details>
+    <app-details [selCandidat]="selectedCandidat"></app-details>
   </div>
 </div>
