@@ -17,4 +17,8 @@ export class FirstComponent {
   mouseenter() {
     console.log('Bouton survolé');
   }
+
+  traitement(msgDuChild: string) {
+    this.prenom = msgDuChild;
+  }
 }

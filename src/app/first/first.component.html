@@ -1,4 +1,4 @@
-<p>Je m'appelle {{ prenom }} : {{ age }} ans</p>
+<p>Je m'appelle "{{ prenom }}" : {{ age }} ans</p>
 
 <div [hidden]="hd" [style.backgroundColor]="myColor">Chez PLB</div>
 <hr />
@@ -14,4 +14,4 @@
 
 <input [(ngModel)]="prenom" type="text" class="form-control" />
 
-<app-child [childColor]="myColor"></app-child>
+<app-child (childEvent)="traitement($event)" [childColor]="myColor"></app-child>

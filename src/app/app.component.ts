@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'plb-juin-24';
+
+  traitementDuApp(msg) {
+    console.log(msg);
+  }
 }

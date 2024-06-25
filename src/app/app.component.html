@@ -1,7 +1,12 @@
-<h3>Formation en Angular</h3>
-<hr />
-<app-first></app-first>
+<div class="container">
+  <h3>Formation en Angular</h3>
+  <hr />
+  <app-first></app-first>
 
-*****************************
+  *****************************
 
-<app-child [childColor]="'red'"></app-child>
+  <app-child
+    (childEvent)="traitementDuApp($event)"
+    [childColor]="'red'"
+  ></app-child>
+</div>
