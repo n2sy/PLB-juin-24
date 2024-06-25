@@ -1,14 +1,15 @@
 <ul class="list-group">
-  <app-item
-    (itemEvent)="sendCandToCv($event)"
-    [oneCandidat]="allCands[0]"
-  ></app-item>
-  <app-item
+  @for (cand of allCands; track $index) {
+
+  <app-item (itemEvent)="sendCandToCv($event)" [oneCandidat]="cand"></app-item>
+
+  }
+  <!-- <app-item
     (itemEvent)="sendCandToCv($event)"
     [oneCandidat]="allCands[1]"
   ></app-item>
   <app-item
     (itemEvent)="sendCandToCv($event)"
     [oneCandidat]="allCands[2]"
-  ></app-item>
+  ></app-item> -->
 </ul>
