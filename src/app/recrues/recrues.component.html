@@ -1,1 +1,12 @@
-<p>recrues works!</p>
+@if (tab.length) {
+<div>
+  <div class="text-bg-info p-3">Liste des recrues</div>
+
+  <ul class="list-group">
+    @for (rec of tab; track $index) {
+    <app-item [oneCandidat]="rec"></app-item>
+    }
+  </ul>
+</div>
+
+}
