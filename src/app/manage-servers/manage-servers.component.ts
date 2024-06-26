@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './manage-servers.component.css',
 })
 export class ManageServersComponent {
+  searchStatus = '';
+
+  p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Result fourni');
+    }, 3000);
+  });
   allServers = [
     {
       name: 'Production server',
@@ -32,6 +39,15 @@ export class ManageServersComponent {
       status: 'stable',
     },
   ];
+
+  addServer() {
+    this.allServers.push({
+      name: 'NEW SERVER',
+      type: 'large',
+      date_d: new Date(2020, 4, 5),
+      status: 'stable',
+    });
+  }
 
   affecterClass(st) {
     return {

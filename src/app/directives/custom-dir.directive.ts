@@ -1,9 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  HostBinding,
-  HostListener,
-} from '@angular/core';
+import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appCustomDir]',
@@ -11,9 +6,9 @@ import {
 export class CustomDirDirective {
   @HostBinding('style.backgroundColor') bgColorByJenny; // = 'blue';
   @HostBinding('style.color') txtColor; // = 'red';
-  constructor(public elementRef: ElementRef) {
-    console.log(elementRef);
-  }
+  // constructor(public elementRef: ElementRef) {
+  //   console.log(elementRef);
+  // }
   @HostListener('mouseenter') mouseenter() {
     this.bgColorByJenny = 'grey';
     this.txtColor = 'white';

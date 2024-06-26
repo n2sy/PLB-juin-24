@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Candidat } from '../models/candidat';
+import { GestionCandidatsService } from '../service/gestion-candidats.service';
 
 @Component({
   selector: 'app-item',

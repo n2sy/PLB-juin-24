@@ -1,9 +1,6 @@
 <div class="row">
   <div class="col-6">
-    <app-liste
-      (listeEvent)="recupererCandidatClicke($event)"
-      [allCands]="tabCandidats"
-    ></app-liste>
+    <app-liste (listeEvent)="recupererCandidatClicke($event)"></app-liste>
   </div>
   <div class="col-6">
     @if (selectedCandidat) {
@@ -14,3 +11,12 @@
     }
   </div>
 </div>
+
+<app-recrues></app-recrues>
+
+<button (click)="addNewCandidate()" class="btn btn-primary">
+  Add Candidate
+</button>
+<button (click)="showCandidates()" class="btn btn-info">
+  show Candidates from CV
+</button>

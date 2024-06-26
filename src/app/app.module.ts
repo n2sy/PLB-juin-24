@@ -16,11 +16,31 @@ import { DirectComponent } from './direct/direct.component';
 import { ManageServersComponent } from './manage-servers/manage-servers.component';
 import { CustomDirDirective } from './directives/custom-dir.directive';
 import { ShortPipe } from './pipes/short.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { GestionCandidatsService } from './service/gestion-candidats.service';
+import { RecruesComponent } from './recrues/recrues.component';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, HomeAccountComponent, AddAccountComponent, ItemAccountComponent, DirectComponent, ManageServersComponent, CustomDirDirective, ShortPipe],
+  declarations: [
+    AppComponent,
+    FirstComponent,
+    ChildComponent,
+    CvComponent,
+    ListeComponent,
+    ItemComponent,
+    DetailsComponent,
+    HomeAccountComponent,
+    AddAccountComponent,
+    ItemAccountComponent,
+    DirectComponent,
+    ManageServersComponent,
+    CustomDirDirective,
+    ShortPipe,
+    FilterPipe,
+    RecruesComponent,
+  ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [GestionCandidatsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
