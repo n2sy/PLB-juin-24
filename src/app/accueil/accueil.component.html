@@ -1,0 +1,15 @@
+<h4>Bienvenue à notre session de formation en Angular</h4>
+<h6>Navigation côté HTML</h6>
+<button routerLink="cv" class="btn btn-primary">Aller à CV</button>
+<a [routerLink]="['servers']" class="btn btn-danger">Aller à Servers</a>
+
+<h6>Navigation côté TS</h6>
+<button (click)="allerACV()" class="btn btn-info">Aller à CV</button>
+
+<button
+  (click)="allerAServers()"
+  [routerLink]="['servers']"
+  class="btn btn-warning"
+>
+  Aller à Servers
+</button>

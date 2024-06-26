@@ -5,9 +5,9 @@ import { GestionRecruesService } from './gestion-recrues.service';
 @Injectable()
 export class GestionCandidatsService {
   private candidates: Candidat[] = [
-    new Candidat('bart', 'simpson', 23, 'ingénieur', 'bart.jpeg'),
-    new Candidat('homer', 'simpson', 51, 'directeur', 'homer.png'),
-    new Candidat('lisa', 'simpson', 28, 'designer', 'lisa.png'),
+    new Candidat(1, 'bart', 'simpson', 23, 'ingénieur', 'bart.jpeg'),
+    new Candidat(2, 'homer', 'simpson', 51, 'directeur', 'homer.png'),
+    new Candidat(3, 'lisa', 'simpson', 28, 'designer', 'lisa.png'),
   ];
 
   getAllCandidates() {
@@ -17,7 +17,7 @@ export class GestionCandidatsService {
 
   addCandidate() {
     this.candidates.push(
-      new Candidat('NEW', 'CANDIDATE', 28, 'designer', 'lisa.png')
+      new Candidat(12, 'NEW', 'CANDIDATE', 28, 'designer', 'lisa.png')
     );
   }
 

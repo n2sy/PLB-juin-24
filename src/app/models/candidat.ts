@@ -4,6 +4,7 @@ export class Candidat {
   //   public age: number;
 
   constructor(
+    public _id: number,
     public prenom: string,
     public nom: string,
     public age: number,
