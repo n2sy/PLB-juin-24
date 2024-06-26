@@ -12,9 +12,13 @@ import { DetailsComponent } from './details/details.component';
 import { HomeAccountComponent } from './accounts/home-account/home-account.component';
 import { AddAccountComponent } from './accounts/add-account/add-account.component';
 import { ItemAccountComponent } from './accounts/item-account/item-account.component';
+import { DirectComponent } from './direct/direct.component';
+import { ManageServersComponent } from './manage-servers/manage-servers.component';
+import { CustomDirDirective } from './directives/custom-dir.directive';
+import { ShortPipe } from './pipes/short.pipe';
 
 @NgModule({
-  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, HomeAccountComponent, AddAccountComponent, ItemAccountComponent],
+  declarations: [AppComponent, FirstComponent, ChildComponent, CvComponent, ListeComponent, ItemComponent, DetailsComponent, HomeAccountComponent, AddAccountComponent, ItemAccountComponent, DirectComponent, ManageServersComponent, CustomDirDirective, ShortPipe],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
