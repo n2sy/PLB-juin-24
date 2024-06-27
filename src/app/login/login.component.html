@@ -1,9 +1,74 @@
 <form #f="ngForm">
   <label for="">Adresse mail</label>
-  <input ngModel email required name="email" type="text" class="form-control" />
+  <input
+    #inpEmail="ngModel"
+    ngModel
+    email
+    required
+    name="email"
+    type="text"
+    class="form-control"
+  />
+
+  @if (inpEmail.invalid && inpEmail.dirty) {
+  <div class="alert alert-danger">Veuillez saisir une adresse mail valide</div>
+
+  }
   <label for="">Password</label>
-  <input ngModel name="password" type="text" class="form-control" />
+  <input
+    ngModel
+    name="password"
+    minlength="5"
+    type="text"
+    class="form-control"
+  />
   <br />
+
+  <div #divPref="ngModelGroup" ngModelGroup="preferences">
+    <label for="">Langage préféré</label>
+    <select [ngModel]="langageParDefaut" name="langage" class="form-control">
+      <option value=""></option>
+      <option value="java">Java</option>
+      <option value="php">Php</option>
+      <option value="javascript">Javascript</option>
+    </select>
+    <br />
+    {{ langageParDefaut }}
+
+    <label for="">Commentaire</label>
+    <textarea
+      [(ngModel)]="monCommentaire"
+      name="commentaire"
+      rows="4"
+      cols="5"
+      class="form-control"
+    ></textarea>
+
+    {{ monCommentaire }}
+  </div>
+
+  <label for="">Gestion des erreurs</label>
+  <input
+    #exp="ngModel"
+    ngModel
+    name="exemple"
+    required
+    minlength="5"
+    pattern="nidhal"
+    type="text"
+    class="form-control"
+  />
+  @if (exp.invalid) {
+  <div class="alert alert-danger">
+    @if (exp.errors['required']) {
+    <p>Ce champ est obligatoire</p>
+    } @if (exp.errors['minlength']) {
+    <p>Le nombre minimal de caractères est 5</p>
+    } @if (exp.errors['pattern']) {
+    <p>Le pattern est 'nidhal'</p>
+    }
+  </div>
+  }
 
   <pre>
     {{ f.value | json }}
