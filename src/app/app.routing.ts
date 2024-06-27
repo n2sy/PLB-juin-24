@@ -7,6 +7,9 @@ import { AddComponent } from './add/add.component';
 import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { allowGuard } from './guards/allow.guard';
+import { denyGuard } from './guards/deny.guard';
+import { blockGuard } from './guards/block.guard';
 
 const myRoutes: Routes = [
   //Version 2
@@ -37,18 +40,23 @@ const myRoutes: Routes = [
     path: 'cv',
     children: [
       { path: '', component: CvComponent },
-      { path: 'add', component: AddComponent },
+      { path: 'add', component: AddComponent, canActivate: [allowGuard] },
       {
         path: ':id',
         children: [
           { path: '', component: InfosComponent },
-          { path: 'edit', component: EditComponent },
+          { path: 'edit', component: EditComponent, canActivate: [allowGuard] },
         ],
       },
     ],
   },
   { path: 'servers', component: ManageServersComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [denyGuard],
+    canDeactivate: [blockGuard],
+  },
   {
     path: 'accounts',
     loadChildren: () => import('./sub/sub.module').then((c) => c.SubModule),

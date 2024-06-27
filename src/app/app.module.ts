@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { CvComponent } from './cv/cv.component';
 import { ListeComponent } from './liste/liste.component';
@@ -25,6 +25,9 @@ import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SubModule } from './sub/sub.module';
 import { LoginComponent } from './login/login.component';
+import { ReactFormComponent } from './react-form/react-form.component';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { addTokenInterceptor } from './add-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -48,9 +51,13 @@ import { LoginComponent } from './login/login.component';
     EditComponent,
     NotFoundComponent,
     LoginComponent,
+    ReactFormComponent,
   ],
-  imports: [BrowserModule, FormsModule, PLB_ROUTING],
-  providers: [GestionCandidatsService],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, PLB_ROUTING],
+  providers: [
+    GestionCandidatsService,
+    provideHttpClient(withInterceptors([addTokenInterceptor])),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
