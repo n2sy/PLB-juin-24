@@ -1,0 +1,14 @@
+<form #f="ngForm">
+  <label for="">Adresse mail</label>
+  <input ngModel email required name="email" type="text" class="form-control" />
+  <label for="">Password</label>
+  <input ngModel name="password" type="text" class="form-control" />
+  <br />
+
+  <pre>
+    {{ f.value | json }}
+  </pre>
+  <button (click)="submitHandler(f)" type="submit" class="btn btn-primary">
+    Submit
+  </button>
+</form>

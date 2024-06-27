@@ -9,9 +9,6 @@ import { CvComponent } from './cv/cv.component';
 import { ListeComponent } from './liste/liste.component';
 import { ItemComponent } from './item/item.component';
 import { DetailsComponent } from './details/details.component';
-import { HomeAccountComponent } from './accounts/home-account/home-account.component';
-import { AddAccountComponent } from './accounts/add-account/add-account.component';
-import { ItemAccountComponent } from './accounts/item-account/item-account.component';
 import { DirectComponent } from './direct/direct.component';
 import { ManageServersComponent } from './manage-servers/manage-servers.component';
 import { CustomDirDirective } from './directives/custom-dir.directive';
@@ -23,6 +20,11 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { PLB_ROUTING } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InfosComponent } from './infos/infos.component';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SubModule } from './sub/sub.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +35,6 @@ import { InfosComponent } from './infos/infos.component';
     ListeComponent,
     ItemComponent,
     DetailsComponent,
-    HomeAccountComponent,
-    AddAccountComponent,
-    ItemAccountComponent,
     DirectComponent,
     ManageServersComponent,
     CustomDirDirective,
@@ -45,6 +44,10 @@ import { InfosComponent } from './infos/infos.component';
     AccueilComponent,
     NavbarComponent,
     InfosComponent,
+    AddComponent,
+    EditComponent,
+    NotFoundComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, PLB_ROUTING],
   providers: [GestionCandidatsService],

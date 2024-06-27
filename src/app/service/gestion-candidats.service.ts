@@ -15,6 +15,10 @@ export class GestionCandidatsService {
   }
   constructor(private recrueService: GestionRecruesService) {}
 
+  getCandidateById(id) {
+    return this.candidates.find((cand) => cand._id == id);
+  }
+
   addCandidate() {
     this.candidates.push(
       new Candidat(12, 'NEW', 'CANDIDATE', 28, 'designer', 'lisa.png')
